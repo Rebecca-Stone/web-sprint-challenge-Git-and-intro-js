@@ -244,18 +244,26 @@ Use get20s to do the following:
 Example born in 1901 and died in 1959 - included -- born in 1889 and died in 1925 not included
 If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 // Hint - Look up the .split() method
+//one param, array
+//iterate through array.years to find 1900-2000
+//push their names to new array
+//return the new array of array.names of artist dates between 1900-2000
 
-function get20s(array) {
-  const dates = []
-  for(let i = 0; i < length; i++){
-    if(array.years){
-      ;
-
+function get20s(array){
+  let newArray = [];
+  for(let i = 0; i < array.length; i++){
+    let years = array[i].years;
+    let year = years.split("-");
+    let birth = year[0];
+    let death = year[1];
+    if(birth >= 1900 && death <= 2000){
+      newArray.push(array[i].name);
     }
   }
+  return newArray;
 }
 
-
+console.log(get20s(artists));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use removeArtist to do the following:
@@ -360,8 +368,6 @@ function artistByCountry(array, nationality){
 console.log(artistByCountry(artists, 'Spanish'));
 
 /* ***** END OF TASKS ***** */
-
-
 
 /* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑*/
 function foo() {
