@@ -201,53 +201,11 @@ const artists = [
   }
 ]
 
-// 🖌🖼 M V P 🖼🖌 //
-
-/* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 1: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
-Practice accessing data above by console.log-ing following items:
-(no functions needed) */
-
-//(1) Name of the first artist (0th index) in the array
-
-console.log(`TASK 1.1: ${artists[0].name}`);
-
-//(2) Bio of the third artist (2nd index) in the array 
-
-console.log(`TASK 1.2: ${artists[2].bio}`);
-
-/* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
-(no function needed) 
-There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Fix this issue and console.log() to check your work. */
-
 artists[8].name = 'Vincent Van Gogh';
-console.log(`TASK 2: ${artists[8].name}`);
-
-/* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀  
-Use getArtistByIndex to do the following:
-1. Receive an array
-2. Receive a number, which is the desired index in the array.
-3. Return a string in the format `the artist at index {id} is {name}`
-
-Example, if getArtistByIndex is invoked with the artists array and the number 0, it will return `the artist at index 0 is Amedeo Modigliani` */
 
 function getArtistByIndex(array, index) {
   return `the artist at index ${array[index].id} is ${array[index].name}`;
 }
-
-console.log(`TASK 3: ${getArtistByIndex(artists, 0)}`);
-
-/* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
-Use get20s to do the following: 
-1. Receive an array
-2. Return a new array with names of artists who were born in and died in 20th century (1900-2000) 
-
-Example born in 1901 and died in 1959 - included -- born in 1889 and died in 1925 not included
-If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
-// Hint - Look up the .split() method
-//one param, array
-//iterate through array.years to find 1900-2000
-//push their names to new array
-//return the new array of array.names of artist dates between 1900-2000
 
 function get20s(array){
   let newArray = [];
@@ -263,54 +221,16 @@ function get20s(array){
   return newArray;
 }
 
-console.log(`TASK 4: ${get20s(artists)}`);
-
-/* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
-Use removeArtist to do the following:
-1. Receive an array
-2. Receive a number which is the desired index in the array
-3. The function should remove an artist from the array at the index
-4. Return the length of the remaining dataset.
-
-For example, if removeArtist is invoked with the artists array and the number 0, it will remove Amedeo Modigliani from our dataset and return the number 19. */
-
 function removeArtist(array, index) {
   array.splice(index, 1);
   return array.length;
 }
-
-console.log(`TASK 5: ${removeArtist(artists, 0)}`);
-
-/* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
-Use addArtist to do the following: 
-1. Receive an array
-2. Add this object of information to the end of the array
-  { 
-    id: 20,
-    name: Your Name Here, 
-    years: Your Birth Year - current day,
-    genre: Web Design, 
-    nationality: Your Nationality Here
-    bio: Add 1-2 sentences (or use lorem ipsum)
-  }  
-3. Return the resulting array
-
-Example: addArtist(artists) should return the artists array with the above object added to the end of the array. */
 
 function addArtist(array, id, name, years, genre, nationality, bio) {
   let object = {id, name, years, genre, nationality, bio};
   array.push(object);
   return array;
 }
-
-console.log(`TASK 6: ${addArtist(artists, 20, "Rebecca", "1996 - 2021", "WebDesign", "American", "I really hope this works lol")}`);
-
-/* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
-Use lotsOfArt to do the following: 
-1. Receive an array 
-2. Return an array with names of artists in the received array who painted more than 100 paintings.
-
-For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ... "Albrecht Dürer"]*/
 
 function lotsOfArt(array) {
   let lotsOfPaintings = [];
@@ -322,18 +242,6 @@ function lotsOfArt(array) {
   return lotsOfPaintings;
 }
 
-console.log(`TASK 7: ${lotsOfArt(artists)}`);
-
-/* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 8: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
-Use artistInfo to do the following: 
-1. Receive an array 
-2. Receive an artist's name
-3. return the artists bio
-
-For example artistInfo(artists, 'Frida Kahlo') will return: 
-  ["Frida Kahlo de Rivera (Spanish pronunciation: [ˈfɾiða ˈkalo]; born Magdalena Carmen Frida Kahlo y Calderón; 6 July 1907 – 13 July 1954) was a Mexican artist who painted many portraits, self-portraits and works inspired by the nature and artifacts of Mexico. Inspired by the country's popular culture, she employed a naïve folk art style to explore questions of identity, postcolonialism, gender, class and race in Mexican society. Her paintings often had strong autobiographical elements and mixed realism with fantasy. In addition to belonging to the post-revolutionary Mexicayotl movement, which sought to define a Mexican identity, Kahlo has been described as a surrealist or magical realist.Born to a German father and a mestiza mother, Kahlo spent most of her childhood and adult life at her family home in Coyoacán, La Casa Azul, now known and publicly accessible as the Frida Kahlo Museum. She was disabled by polio as a child. Until a traffic accident at age eighteen caused lifelong pain and medical problems, she had been a promising student headed for medical school. During her recovery, she returned to her childhood hobby of art with the idea of becoming an artist."]
-*/
-
 function artistInfo(array, name){
   let artistInfo = [];
   for(let i = 0; i < array.length; i++){
@@ -343,17 +251,6 @@ function artistInfo(array, name){
   }
   return artistInfo;
 }
-
-console.log(`TASK 8: ${artistInfo(artists, 'Frida Kahlo')}`);
-
-/* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 9: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
-Use artistByCountry to do the following: 
-1. Receive an array 
-2. Receive a nationality
-3. returns a list of artists from that country
-
-For example artistByCountry(artists, 'Spanish') will return: [ 'Salvador Dali', 'Pablo Picasso', 'Francisco Goya', 'El Greco' ]
-*/
 
 function artistByCountry(array, nationality){
   let nationaList = [];
@@ -365,7 +262,6 @@ function artistByCountry(array, nationality){
   return nationaList;
 }
 
-console.log(`TASK 8: ${artistByCountry(artists, 'Spanish')}`);
 
 /* ***** END OF TASKS ***** */
 
